@@ -89,31 +89,7 @@
             <p>
             <label for="optOut">
                 <input type="checkbox" name="optout" id="profile" value="Profile Delay" /> I agree to complete the account profile prior to scheduling my first appointment</label>
-                
-                <div class="mainbtn"> 
-                    <button type="submit" onclick="openPopup()">Submit</button>
-                    <div class="popup" id="popup">
-                        <h4>Are you sure?</h4>
-                        <p>If you want to complete your profile at a later time, click submit.</p>
-                        <p>If you want to complete your profile now, click back.</p>
-                        <button type="button" onclick="closePopup()">BACK</button>
-                        <button type="submit">SUBMIT</button>
-                    </div>
-                </div>
-
-                <script>
-                    let popup = document.getElementById("popup");
-
-                    function openPopup(){
-                        popup.classList.add(".open-popup");
-                    }
-
-                    function closePopup(){
-                        popup.classList.remove(".open-popup");
-                    }
-
-                </script>
-
+                <button type="submit">Submit</button>
             </p>
         </fieldset>
 
