@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>ADJUST</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+
+<body>
+    
+    <header>
+        <a class="title" href="/index.html"><h1> A D J U S T</h1></a>
+        <h4>CHIROPRACTIC AND MASSAGE SCHEDULER</h4>
+    </header>
+
+    <form action="/register" method="POST">
+
+        <fieldset>
+
+            <legend>D I R E C T I O N S</legend>
+
+            <p>To create an account, complete the REGISTER fields.</p>
+
+            <p>When the REGISTER fields are complete, you may continue to the next section to complete the ACCOUNT PROFILE fields.</p>
+
+            <p>If you'd like to complete your account profile at a later time, press SUBMIT.</p>
+
+            <p>Please note, you must complete your account profile prior to scheduling your first appointment.</p>
+
+
+        </fieldset>
+
+        <fieldset class="register">
+            <legend>REGISTER</legend>
+
+            <p>
+                <label for="email">Email*:
+                    <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        size="40"
+                        maxlength="100"
+                        required
+                        pattern="[^@]+@[^@]+.[a-z]"
+                        placeholder="name@host.com" 
+                        autofocus/>
+                </label>
+            </p>
+
+            
+            <p>
+                <label for="password">Create Password*:
+                    <input type="password"
+                    name="password"
+                    id="password"
+                    size="40"
+                    maxlength="100"
+                    required
+                    placeholder="Enter password" />
+                </label>
+                <div class="tooltip"> <strong>?</strong> 
+                    <span class="tooltiptext">
+                        <p>Password Help</p>
+                        <p>Use at least 10 characters</p>
+                        <p>Use upper and lower case characters</p>
+                        <p>Use 1 or more numbers</p>
+                        <p>Use at least 1 special character (!#$%=@+*&^?)</p>
+                    </span>
+                </div>
+
+            </p>
+
+            <p>
+                <label for="confirmPassword">Confirm Password*:
+                    <input type="password"
+                    name="confirmPassword"
+                    id="confirmPassword"
+                    size="40"
+                    maxlength="100"
+                    required
+                    placeholder="Enter password" />
+                </label>
+            </p>
+
+            <p>
+            <label for="optOut">
+                <input type="checkbox" name="optout" id="profile" value="Profile Delay" /> I agree to complete the account profile prior to scheduling my first appointment</label>
+                
+                <div class="mainbtn"> 
+                    <button type="submit" onclick="openPopup()">Submit</button>
+                    <div class="popup" id="popup">
+                        <h4>Are you sure?</h4>
+                        <p>If you want to complete your profile at a later time, click submit.</p>
+                        <p>If you want to complete your profile now, click back.</p>
+                        <button type="button" onclick="closePopup()">BACK</button>
+                        <button type="submit">SUBMIT</button>
+                    </div>
+                </div>
+
+                <script>
+                    let popup = document.getElementById("popup");
+
+                    function openPopup(){
+                        popup.classList.add(".open-popup");
+                    }
+
+                    function closePopup(){
+                        popup.classList.remove(".open-popup");
+                    }
+
+                </script>
+
+            </p>
+        </fieldset>
+
+
+        <fieldset class="profile">
+            <legend>ACCOUNT PROFILE</legend>
+
+            <p>
+                <label for="firstName">First Name:
+                    <input
+                        type="text"
+                        name="firstName"
+                        id="firstName"
+                        size="40"
+                        maxlength="100"
+                        placeholder="Enter first name" 
+                        autofocus/>
+                </label>
+            </p>
+
+            <p>
+                <label for="lastName">Last Name:
+                    <input
+                        type="text"
+                        name="lastName"
+                        id="lastName"
+                        size="40"
+                        maxlength="100"
+                        placeholder="Enter last name"/>
+                </label>
+            </p>
+
+            <p>
+                <label for="birthday">Birthday:</label>
+                <input type="date" id="birthday" name="birthday">
+            </p>
+
+            <p>
+                <label for="phone">Phone Number:
+                    <input type="tel"
+                    name="phone"
+                    id="phone"
+                    size="40"
+                    maxlength="15"
+                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                    placeholder="123-456-7890" />
+                </label>
+            </p>
+
+            <p>
+                <label for="street">Street Address:
+                    <input type="text"
+                    name="streetAddress"
+                    id="street"
+                    size="40"
+                    maxlength="100"
+                    placeholder="Enter Street Address" />
+                </label>
+            </p>
+
+            
+            <p>
+                <label for="city">City:
+                    <input type="text"
+                    name="city"
+                    id="city"
+                    size="40"
+                    maxlength="100"
+                    placeholder="Enter City" />
+                </label>
+            </p>
+
+            <p>
+                <label for="state">State:
+                    <input type="text"
+                    name="state"
+                    id="state"
+                    size="40"
+                    maxlength="100"
+                    placeholder="Enter State" />
+                </label>
+            </p>
+
+            <p>
+                <label for="zip">Zip Code:
+                    <input type="text"
+                    name="zip"
+                    id="zip"
+                    size="40"
+                    maxlength="100"
+                    placeholder="Enter Zip Code" />
+                </label>
+            </p>
+
+            <p>
+                <label for="doctor">Primary Care Doctor:
+                    <input type="text"
+                    name="doctor"
+                    id="doctor"
+                    size="40"
+                    maxlength="100"
+                    placeholder="Enter Primary Care Doctor" />
+                </label>
+            </p>
+
+            <p>
+                <label for="doctorPhone">Primary Care Doctor Phone Number:
+                    <input type="tel"
+                    name="doctorPhone"
+                    id="doctorPhone"
+                    size="40"
+                    maxlength="100"
+                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                    placeholder="123-456-7890" />
+                </label>
+            </p>
+
+            <p>
+                <label for="insuranceProvider">Insurance Provider:
+                    <input type="text"
+                    name="insuranceProvider"
+                    id="insuranceProvider"
+                    size="40"
+                    maxlength="100"
+                    placeholder="Enter Insurance Provider" />
+                </label>
+            </p>
+
+            <p>
+                <label for="insuranceid">Insurance ID Number:
+                    <input type="text"
+                    name="insuranceId"
+                    id="insuranceid"
+                    size="40"
+                    maxlength="100"
+                    placeholder="Enter Insurance ID number" />
+                </label>
+            </p>
+
+            <p>
+                <label for="insuranceGroup">Insurance Group Number:
+                    <input type="text"
+                    name="insuranceGroup"
+                    id="insuranceGroup"
+                    size="40"
+                    maxlength="100"
+                    placeholder="Enter Insurance Group number" />
+                </label>
+            </p>
+
+            <p>
+                <label for="emergency">Emergency Contact:
+                    <input type="text"
+                    name="emergency"
+                    id="emergency"
+                    size="40"
+                    maxlength="100"
+                    placeholder="Enter Emergency Contact" />
+                </label>
+            </p>
+
+            <p>
+                <label for="emergencyRelation">Relation:
+                    <input type="text"
+                    name="emergencyRelation"
+                    id="emergencyRelation"
+                    size="40"
+                    maxlength="100"
+                    placeholder="Enter Emergency Contact Relation" />
+                </label>
+            </p>
+
+            <p>
+                <label for="emergencyNumber">Emergency Contact Phone Number:
+                    <input type="tel"
+                    name="emergencyNumber"
+                    id="emergencyNumber"
+                    size="40"
+                    maxlength="100"
+                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                    placeholder="123-456-7890" />
+                </label>
+            </p>
+
+            <button type="submit">Submit</button>
+
+        </fieldset>
+    </form>
+
+    <footer>
+        <p>Copyright &copy; 2023 Kathrina Elting</p>
+    </footer>
+
+</body>
+</html>
