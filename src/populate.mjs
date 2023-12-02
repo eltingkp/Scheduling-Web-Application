@@ -1,4 +1,4 @@
-import clinicsJSON from './clinics.json' assert {type: 'json'};
+import clinicsJSON from '../clinics.json' assert {type: 'json'};
 
 export async function populateClinics() {
     for (let index = 0; index < clinicsJSON.length; index++) {
