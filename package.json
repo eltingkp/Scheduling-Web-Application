@@ -2,10 +2,10 @@
   "name": "361project",
   "version": "1.0.0",
   "description": "CS361 Project",
-  "main": "index.js",
+  "main": "index.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "start": "nodemon index.mjs"
   },
   "author": "eltingk",
   "license": "ISC",

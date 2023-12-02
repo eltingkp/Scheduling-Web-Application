@@ -1,7 +1,6 @@
-const clinicsJSON = require('./clinics.json');
-console.log(clinicsJSON);
+import clinicsJSON from './clinics.json' assert {type: 'json'};
 
-async function populateClinics() {
+export async function populateClinics() {
     for (let index = 0; index < clinicsJSON.length; index++) {
         let data = clinicsJSON[index];
         const response = await fetch('http://127.0.0.1:8000/create-clinic', {
@@ -15,8 +14,4 @@ async function populateClinics() {
         const responseData = await response.json();
         console.log(responseData);
     }
-}
-
-module.exports = {
-    populateClinics: populateClinics
 }

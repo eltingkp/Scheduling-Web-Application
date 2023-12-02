@@ -1,12 +1,12 @@
 'use strict';
 
-const {canLogin, register} = require('./user-service');
-const express = require('express');
-const app = express();
-const {populateClinics} = require('./populate');
-const asyncHandler = require('express-async-handler');
-const {getHtmlClinicList} = require('./clinicViaList');
+import {canLogin, register} from './user-service.mjs';
+import express from 'express';
+import {populateClinics} from './populate.mjs';
+import asyncHandler from 'express-async-handler';
+import {getHtmlClinicList} from './clinicViaList.mjs';
 
+const app = express();
 const PORT = 3000;
 
 populateClinics()

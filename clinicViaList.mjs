@@ -1,4 +1,4 @@
- function getHtmlClinicList(clinicsList) {
+ export function getHtmlClinicList(clinicsList) {
 
     const finalList = [];
 
@@ -21,8 +21,4 @@
     }
     
     return finalList.join(' ');
-}
-
-module.exports = {
-    getHtmlClinicList: getHtmlClinicList,
 }
