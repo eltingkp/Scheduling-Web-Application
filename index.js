@@ -215,18 +215,10 @@ app.post("/clinics", asyncHandler (async(req, res) =>{
         ${htmlTop}
         <section>
         <article>
-        <h3>Clinic not found, please try again!</h3>
+
         ${htmlSelectClinicID}
-        <form action="/clinics" method="POST">
-            <fieldset class="clinicList">
-                <legend>Select Clinic via List</legend>
+        <h3>Clinic not found, please try again or <a href='./clinics'> search via list</a>!</h3>
 
-
-                <button>Submit</button>
-            </fieldset>
-        </form>
-        </article>
-        </section>
     ${htmlBottom}`);
     } else {
         const clinicArray = []
