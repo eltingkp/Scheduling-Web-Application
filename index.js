@@ -3,8 +3,13 @@
 const {canLogin, register} = require('./user-service');
 const express = require('express');
 const app = express();
+const {populateClinics} = require('./populate');
+const asyncHandler = require('express-async-handler');
+const {getHtmlClinicList} = require('./clinicViaList');
+
 const PORT = 3000;
 
+populateClinics()
 
 app.use(express.urlencoded({
     extended: true
@@ -79,21 +84,7 @@ let htmlLoginForm =`
     </form>
 `;
 
-app.get("/dashboard", (req, res) => {
-
-    res.send(`
-        ${htmlTop}
-        <section>
-            <h2>Welcome!</h2>
-                <article>
-                    Your dashboard is under construction...
-                </article>
-        </section>
-            ${htmlBottom}`);
-
-
-});
-
+/* GET request to /login endpoint */
 app.get("/login", (req, res) => {
 
     res.send(`
@@ -102,7 +93,7 @@ app.get("/login", (req, res) => {
     ${htmlBottom}`);
 });
 
-
+/* requesting data from /register endpoint (connected to form), creating a user */
 app.post("/register", (req, res) =>{
 
     const user = req.body;
@@ -112,6 +103,7 @@ app.post("/register", (req, res) =>{
 
 });
 
+/* requesting data from /login endpoint (connected to form), validating user credentials */
 app.post("/login", (req, res) =>{
     console.log(req.body);
 
@@ -130,6 +122,141 @@ app.post("/login", (req, res) =>{
     }
 
 });
+
+/* GET request /dashboard endpoint, "home page" for user" */
+app.get("/dashboard", (req, res) => {
+
+    res.send(`
+        ${htmlTop}
+        <section>
+            <h2>Welcome!</h2>
+
+            <article>
+                <aside class="dash">
+                    <h3>Upcoming Appointments</h3>
+                    <a class="dashlinks" href="../appointments.html">Schedule an Appointment</a>
+                </aside>
+                <aside class="dash">
+                    <h3>Clinics</h3>
+                    <a class="dashlinks" href="../clinics">Manange Clinics</a>
+                </aside>
+            </article>
+
+        </section>
+            ${htmlBottom}`);
+
+
+});
+
+let htmlSelectClinicID =`
+
+    <form action="/clinics" method="POST">
+    <fieldset class="clinicID">
+        <legend>Search via Clinic ID</legend>
+
+    <label for="clinic-search-id">Enter Clinic ID:</label>
+    <p>
+    <input type="search" id="clinic-search-id" name="search" />
+    </p>
+
+    <button>Search</button>
+    </fieldset>
+    </form>`
+
+/* GET request /clinics end point, where user manages clinics  */
+app.get("/clinics", asyncHandler(async (req, res) => {
+
+    const response = await fetch("http://localhost:8000/get-all-clinics")
+    const clinicsList = await response.json()
+    const myJSON = JSON.stringify(clinicsList)
+
+    console.log(clinicsList)
+
+    const finalList = getHtmlClinicList(clinicsList)
+          
+
+res.send(`
+    ${htmlTop}
+        <section>
+        <article>
+        ${htmlSelectClinicID}
+        <form action="/clinics" method="POST">
+            <fieldset class="clinicList">
+                <legend>Select Clinic via List</legend>
+
+                ${finalList}
+
+                <button>Submit</button>
+            </fieldset>
+        </form>
+        
+        </article>
+        </section>
+    ${htmlBottom}`);
+
+}));
+
+app.post("/clinics", asyncHandler (async(req, res) =>{
+    console.log(req.body);
+
+    const enteredClinicID = req.body;
+    const clinicID = enteredClinicID['search']
+    const response = await fetch(`http://127.0.0.1:8000/get-clinic/${clinicID}`);
+    const responseData = await response.json()
+    const dataString = JSON.stringify(responseData)
+    
+    console.log('clinic ID',enteredClinicID)
+    console.log('ID', clinicID)
+    console.log('responseData', responseData)
+    console.log(dataString)
+
+    if (responseData['Error']) {
+        res.send(`
+        ${htmlTop}
+        <section>
+        <article>
+        <h3>Clinic not found, please try again!</h3>
+        ${htmlSelectClinicID}
+        <form action="/clinics" method="POST">
+            <fieldset class="clinicList">
+                <legend>Select Clinic via List</legend>
+
+
+                <button>Submit</button>
+            </fieldset>
+        </form>
+        </article>
+        </section>
+    ${htmlBottom}`);
+    } else {
+        const clinicArray = []
+        clinicArray.push(responseData)
+        const clinicFromID = getHtmlClinicList(clinicArray)
+        console.log('log out clinicFromID', clinicFromID)
+
+        res.send(`
+        ${htmlTop}
+        ${htmlSelectClinicID}
+        <form action="/clinics" method="POST">
+            <fieldset class="clinicList">
+                <legend>Your Requested Clinic</legend>
+
+                ${clinicFromID}
+
+                <button>ADD</button>
+            </fieldset>
+        </form>
+        </article>
+        </section>
+
+        ${htmlBottom}`);
+    }
+
+}));
+
+
+
+
 
 app.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}...`);
