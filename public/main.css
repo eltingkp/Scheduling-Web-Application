@@ -36,40 +36,26 @@
   article {  
    margin: 0 auto;
   }
+
+  article.response {
+    text-align: center;
+  }
     #about {
       text-align: center;
     }
     #topic2 {}
-  div {}
-  /* aside {
-    text-align: center;
-  } */
-  aside.dash {
+  div.dash {
     border: black solid 3px;
-    width: 500px;
-    height: 300px;  
+    width: 50%;
+    height: 50%;  
     display: inline-flex;
     flex-flow: wrap;
     justify-content: center;
     margin: 5px;
+    padding: 10px;
   }
-
-  /* aside.clinics {
-    padding: 10px;
-    border: black solid 3px;
-    width: 400px;
-    height:800px;  
-    justify-content: center;
-    margin: 75px auto;
-  } */
-
-  /* aside.clinicid {
-    padding: 10px;
-    border: black solid 3px;
-    width: 400px;
-    height: 200px;  
-    justify-content: center;
-    margin: 75px auto;
+  /* aside {
+    text-align: center;
   } */
 
   footer {
@@ -121,10 +107,10 @@
   }
   
   /*  ----- Navigation ----- Override text links for navigation only.  */
-  /* nav {
-
+  nav.nav {
+    text-align: center;
   }
-  nav a {
+  /* nav a {
   }
   nav a:hover {} */
   
@@ -160,6 +146,11 @@
 
   h3 {
     text-align: center;
+  }
+
+  h3.dash {
+    text-align: center;
+    padding: 1%;
   }
   h4 {
     text-align: center;
@@ -197,6 +188,23 @@
   table {
     border: 0;
   }
+
+  table.appointments {
+    width: 90%;
+  }
+
+  th.appointments {
+    border-bottom: black solid 2px;
+  }
+
+  table.dash {
+    width: 90%
+  }
+
+  th.dashClinics {
+    border-bottom: black solid 2px;
+  }
+
   /* caption {}
   thead {}
   tbody {}
@@ -226,11 +234,15 @@
     margin: 3% 20%;
     padding: .5%;
   }
-    legend {
-      font-weight: bolder;
-      font-size: 20px;
-      letter-spacing: 5px;
-    }
+  legend {
+    font-weight: bolder;
+    font-size: 20px;
+    letter-spacing: 5px;
+  }
+
+  fieldset.appointment {
+    text-align: center;
+  }
   /* label {} */
 
   button {
@@ -243,6 +255,11 @@
 
   input {
     font-size: medium;
+  }
+
+  textarea.textbox {
+    width: 50%;
+    height: 200px;
   }
   /* select {}
     optgroup {}
