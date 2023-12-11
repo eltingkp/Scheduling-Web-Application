@@ -1,5 +1,6 @@
 import clinicsJSON from '../clinics.json' assert {type: 'json'};
 
+//populates a list of clinics that will be used for my partner's microservice 
 export async function populateClinics() {
     for (let index = 0; index < clinicsJSON.length; index++) {
         let data = clinicsJSON[index];

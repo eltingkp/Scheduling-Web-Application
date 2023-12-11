@@ -32,6 +32,7 @@ export function loginForm() {
                     <!-- <button class="forgot" type="submit">Forgot Password</button> -->
                 </p>
     
+                <a href="/index.html">Go Back</a>
                 <button type="submit">Submit</button>
             </fieldset>
         </form>`;

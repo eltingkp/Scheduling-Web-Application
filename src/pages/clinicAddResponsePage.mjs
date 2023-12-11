@@ -2,6 +2,7 @@ import { header } from "../componenets/header.mjs";
 import { footer } from "../componenets/footer.mjs";
 import { navigation } from "../componenets/navigation.mjs";
 
+// displays the response after adding a clinic to profile
 export function clinicAddResponsePage() {
     return`
         ${header()}

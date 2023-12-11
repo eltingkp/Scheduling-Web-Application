@@ -4,6 +4,7 @@ import { selectClinicID } from "../componenets/selectClinicID.mjs";
 import { footer } from "../componenets/footer.mjs";
 import { clinicList } from "../componenets/clinicList.mjs";
 
+// displays clinics pages
 export function clinicsPage(clinicsData, notFound) {
     const finalList = clinicList(clinicsData);
     let form = '';

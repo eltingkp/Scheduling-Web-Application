@@ -14,8 +14,8 @@ export function header() {
             <body>
                 
             <header>
-                <a class="title" href="/index.html"><h1> A D J U S T</h1></a>
-                <h4>CHIROPRACTIC AND MASSAGE SCHEDULER</h4>
+                <a class="title" href="/dashboard"><h1> A D J U S T</h1></a>
+                <h4>CHIROPRACTIC AND MASSAGE MANAGER</h4>
             </header>`;
 }
 

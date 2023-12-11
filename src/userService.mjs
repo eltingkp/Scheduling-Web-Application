@@ -1,3 +1,5 @@
+// user service validates users when logging in
+
 const users = [{
     email: 'jane.doe@gmail.com',
     password: '1234',
