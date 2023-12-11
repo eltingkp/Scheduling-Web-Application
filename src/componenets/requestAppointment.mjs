@@ -47,6 +47,7 @@ export function requestAppointment() {
                 ></textarea>
                 </p>
             </p>
+            <button onclick="history.back()">Go Back</button>
             <button type="submit">Submit</button>
 
         </fieldset>`

@@ -37,11 +37,18 @@
    margin: 0 auto;
   }
 
+  article.clinicResponse {
+    text-align: center;
+    width: 50%;
+  }
+
   article.response {
     text-align: center;
+    width: 50%;
   }
     #about {
       text-align: center;
+      width: 40%;
     }
     #topic2 {}
   div.dash {
@@ -247,6 +254,13 @@
 
   button {
     font-size: medium;
+    color: black;
+    background-color: whitesmoke;
+
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
   }
 
   button.forgot{

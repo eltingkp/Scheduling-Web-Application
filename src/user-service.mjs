@@ -3,7 +3,7 @@ const users = [{
     password: '1234',
     confirmPassword: '1234',
     optout: 'Profile Delay',
-    firstName: '',
+    firstName: 'Jane',
     lastName: '',
     birthday: '',
     phone: '',

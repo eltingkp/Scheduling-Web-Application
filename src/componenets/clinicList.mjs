@@ -1,3 +1,5 @@
+ 
+ // populates list of clinics for clinics page 
  export function clinicList(clinicsData) {
 
     const finalList = [];

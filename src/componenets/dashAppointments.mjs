@@ -1,3 +1,5 @@
+
+// creates upcoming appointments table for dashboard 
 export function dashAppointments(appointments) {
 
     const dashAppointmentsList = []
@@ -27,6 +29,14 @@ export function dashAppointments(appointments) {
                     <th class="dashClinics">Time</th>
                     <th class="dashClinics">Confirmation Status</th>
                 </tr>
+
+                <tr>
+                    <td>Massage</td>
+                    <td>2023-12-11</td>
+                    <td>11:00</td>
+                    <td>Confirmed</td>
+                </tr>
+                
                 ${dashAppointmentsList.join(' ')}
             </table>`;
 

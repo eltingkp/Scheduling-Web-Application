@@ -17,7 +17,7 @@ export function clinicsPage(clinicsData, notFound) {
                     <legend>Select Clinic via List</legend>
 
                     ${finalList}
-
+                    <a href="/dashboard">Go Back</a>
                     <button>Add</button>
                 </fieldset>
             </form>`;

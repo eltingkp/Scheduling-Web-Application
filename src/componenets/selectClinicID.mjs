@@ -8,7 +8,8 @@ export function selectClinicID () {
                 <p>
                 <input type="search" id="clinic-search-id" name="search" />
                 </p>
-
+                
+                <a href="/dashboard">Go Back</a>
                 <button>Search</button>
             </fieldset>
         </form>`;

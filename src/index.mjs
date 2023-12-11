@@ -111,7 +111,7 @@ app.get("/dashboard", isAuthenticated, asyncHandler(async (req, res) => {
     const clinicsDash = [];
     const appointmentsDash = req.session.user.appointments;
     
-
+    // iterate through user's clinics array property and add clinicsDash to show on linked clinics on dashboard
     for (let index = 0; index < availableClinics.length; index++){
         const availableClinic = availableClinics[index]
         for (let innerIndex = 0; innerIndex < usersClinicIDs.length; innerIndex++) {
@@ -121,6 +121,7 @@ app.get("/dashboard", isAuthenticated, asyncHandler(async (req, res) => {
         }
     }
 
+    // retrieve data to be displayed on dashboard 
     const htmlDashboardPage = dashboardPage(name, email, clinicsDash, appointmentsDash);
     res.send(htmlDashboardPage);
 
@@ -141,7 +142,7 @@ app.get("/clinics", isAuthenticated, asyncHandler(async (req, res) => {
 
 }));
 
-
+// end point for searching clinic via ID
 app.post("/clinics-search", isAuthenticated, asyncHandler (async(req, res) =>{
     console.log(req.body);
 
@@ -166,6 +167,7 @@ app.post("/clinics-search", isAuthenticated, asyncHandler (async(req, res) =>{
 
 }));
 
+// end point, response after selecting clinic from list, and adds clinic to user's clinic property
 app.post("/clinics", isAuthenticated, asyncHandler (async(req, res) =>{
     console.log('selected clinic', req.body)
     const clinicID = req.body.clinic
@@ -176,13 +178,14 @@ app.post("/clinics", isAuthenticated, asyncHandler (async(req, res) =>{
 
 }));
 
+// end point for requesting an appointment
 app.get("/appointments", isAuthenticated, asyncHandler(async (req, res) => {        
 
     res.send(appointmentRequestPage());
 
 }));
 
-
+// end point, reponse after submitting appointment requestm and adds appt. request to appointments property
 app.post("/appointments", isAuthenticated, asyncHandler (async(req, res) =>{
     console.log('received appointment request', req.body)
     const response = appointmentResponsePage();
@@ -193,7 +196,7 @@ app.post("/appointments", isAuthenticated, asyncHandler (async(req, res) =>{
 
 }));
 
-
+// end point, logs out and returns to home 
 app.get('/logout', (req, res) => {
     req.session.user = null;
     res.redirect('/');

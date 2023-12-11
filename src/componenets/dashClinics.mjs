@@ -1,3 +1,5 @@
+
+// creates linked clinics table for dashboard 
 export function dashClinics(clinics) {
 
     const dashClinicsList = []

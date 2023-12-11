@@ -7,9 +7,12 @@ export function clinicAddResponsePage() {
         ${header()}
         ${navigation()}
         <h3> Confirmation </h3>
-        <p>
-            The clinic you selected has been linked to your profile
-        </p>
+        <article class="clinicResponse">
+            <h2>The clinic you selected has been linked to your profile</h2>
+            <p>
+            <a href="/dashboard">Return to Dashboard</a>
+            </p>
+        </article>
         ${footer()}
     `
 }

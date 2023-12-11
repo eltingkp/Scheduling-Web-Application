@@ -1,6 +1,7 @@
 import { dashAppointments } from "./dashAppointments.mjs";
 import { dashClinics } from "./dashClinics.mjs";
 
+//html for dashboard
 export function dashboard(name, clinics, appointments) {
 
     return`

@@ -8,7 +8,10 @@ export function appointmentResponsePage() {
     ${navigation()}
         <h3>Thank you for sending an appointment request!</h3>
         <article class="response">
-            You will receive an email shortly with our availability for the date, time, and service you requested for the clinics linked to your profile.
+            <h2>You will receive an email shortly with our availability for the date, time, and service you requested for the clinics linked to your profile.</h2>
+            <p>
+            <a href="/dashboard">Return to Dashboard</a>
+            </p>
         </article>
     ${footer()}`;
 }
