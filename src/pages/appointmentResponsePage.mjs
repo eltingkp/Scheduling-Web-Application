@@ -1,6 +1,6 @@
-import { header } from "../componenets/header.mjs";
-import { footer } from "../componenets/footer.mjs";
-import { navigation } from "../componenets/navigation.mjs";
+import { header } from "../components/header.mjs";
+import { footer } from "../components/footer.mjs";
+import { navigation } from "../components/navigation.mjs";
 
 // displays response after sending an appointment request
 export function appointmentResponsePage() {

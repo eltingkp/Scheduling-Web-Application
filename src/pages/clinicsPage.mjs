@@ -1,8 +1,8 @@
-import { header } from "../componenets/header.mjs";
-import { navigation } from "../componenets/navigation.mjs";
-import { selectClinicID } from "../componenets/selectClinicID.mjs";
-import { footer } from "../componenets/footer.mjs";
-import { clinicList } from "../componenets/clinicList.mjs";
+import { header } from "../components/header.mjs";
+import { navigation } from "../components/navigation.mjs";
+import { selectClinicID } from "../components/selectClinicID.mjs";
+import { footer } from "../components/footer.mjs";
+import { clinicList } from "../components/clinicList.mjs";
 
 // displays clinics pages
 export function clinicsPage(clinicsData, notFound) {

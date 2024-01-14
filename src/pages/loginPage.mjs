@@ -1,6 +1,6 @@
-import { header } from "../componenets/header.mjs";
-import { footer } from "../componenets/footer.mjs";
-import { loginForm } from "../componenets/loginForm.mjs";
+import { header } from "../components/header.mjs";
+import { footer } from "../components/footer.mjs";
+import { loginForm } from "../components/loginForm.mjs";
 
 //displays login page
 export function loginPage(notValid) {

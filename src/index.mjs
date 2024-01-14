@@ -4,16 +4,10 @@ import {canLogin, register, findUser} from './userService.mjs';
 import express from 'express';
 import {populateClinics} from './populate.mjs';
 import asyncHandler from 'express-async-handler';
-// import {clinicList} from './componenets/clinicList.mjs';
 import session from 'express-session';
-// import { navigation } from './componenets/navigation.mjs'
-import { header } from './componenets/header.mjs';
-import { footer } from './componenets/footer.mjs';
-import { loginForm } from './componenets/loginForm.mjs';
-// import { dashAppointments } from './componenets/dashAppointments.mjs';
-// import { requestAppointment } from './componenets/requestAppointment.mjs'
-// import { selectClinicID } from './componenets/selectClinicID.mjs';
-// import { dashboard } from './componenets/dashboard.mjs';
+import { header } from './components/header.mjs';
+import { footer } from './components/footer.mjs';
+import { loginForm } from './components/loginForm.mjs';
 import { dashboardPage } from './pages/dashboardPage.mjs';
 import { clinicsPage } from './pages/clinicsPage.mjs';
 import { loginPage } from './pages/loginPage.mjs';
